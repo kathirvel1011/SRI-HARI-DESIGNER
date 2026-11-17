@@ -1590,7 +1590,7 @@ function App() {
                       </label>
                       <label className="admin-image-field">
                         Upload your design files – Images, BMP, SVG, EPS, AI, CDR, PDF and more. <span aria-hidden="true">*</span>
-                        <input ref={designFilesInputRef} type="file" accept={ACCEPTED_DESIGN_EXTENSIONS} multiple required disabled={uploadBusy} onChange={(event) => handleDesignFilesChange(event)}/>
+                        <input ref={designFilesInputRef} type="file" multiple required disabled={uploadBusy} onChange={(event) => handleDesignFilesChange(event)}/>
                         <small>Up to {MAX_DESIGN_FILE_COUNT} original files, {formatFileSize(MAX_DESIGN_FILE_SIZE)} each. Original files remain private.</small>
                         {uploadForm.files.map(({ file, previewUrl }, index) => {
                           const FileIcon = ["zip", "rar"].includes(getDesignFileExtension(file.name)) ? FileArchive : FileText;
