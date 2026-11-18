@@ -344,7 +344,7 @@ function App() {
       setUser(data.session?.user ?? null);
     });
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      setUser(session?.user ?? null);
+            setUser((current) => (current?.id === session?.user?.id ? current : (session?.user ?? null)));
       if (event === "PASSWORD_RECOVERY") {
         setAuthMode("reset");
         setAuthOpen(true);
